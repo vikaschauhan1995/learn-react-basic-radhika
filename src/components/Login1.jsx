@@ -1,30 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import constants from '../constants/index.jsx';
-// import { PHONE_NUMEBER } from '../constants/index.jsx';
+import LoginSubmitButton from './LoginSubmitButton.jsx';
+import LoginEmailField from './LoginEmailField.jsx';
+import { LoginContext } from '../context/loginContext.jsx';
 const { EMAIL, PASSWORD } = constants;
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const handleEmailInput = (event) => {
-    const value = event.target.value;
-    setEmail(value);
-  }
-  useEffect(() => {
-    console.log("it rerenders");
-  }, []);
-  function update() {
-    setEmail("abcde");
+  const { state, setState } = useContext(LoginContext);
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setState({ ...state, password: value });
   }
   return (<div className="card">
     <h1>Login</h1>
     <label>{EMAIL}</label>
-    <input type="text" onChange={handleEmailInput} name="email" value={email} placeholder="" /><br />
+    <LoginEmailField />
     <label>{PASSWORD}</label>
-    <input type="text" value={password} onChange={event => setPassword(event.target.value)} name="password" placeholder="" />
+    <input type="text" value={state.password} name="password" onChange={handlePasswordChange} placeholder="" />
     <br />
     <br /><br />
-    <button onClick={update}>Update</button>
+    <LoginSubmitButton />
   </div>);
 }
 
