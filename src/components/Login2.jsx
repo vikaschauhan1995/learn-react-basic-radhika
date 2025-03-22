@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import CustomButton from '../styled-components/CustomButton';
-import CustomButtonContext from '../context/customButtonContext';
+import { CustomButtonContext } from '../context/CustomButtonProvider';
 
 
 const Login2 = () => {
   const { state, setState } = useContext(CustomButtonContext);
   const { backgroundColors } = state;
-  console.log(state);
+  // console.log(state);
   return (<>
     <div>
       <CustomButton background-color={backgroundColors[0]}>

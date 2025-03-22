@@ -1,5 +1,6 @@
-import { useState } from "react";
-import CustomButtonContext from "./customButtonContext";
+import { useState, createContext } from "react";
+
+export const CustomButtonContext =  createContext();
 
 const initialState = {
   backgroundColors: ["red", "green", "blue"]
