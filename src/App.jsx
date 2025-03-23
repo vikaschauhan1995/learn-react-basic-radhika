@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Header from "./components/Header";
+import Mobiles from "./pages/Mobiles";
+import Todos from "./pages/Todos";
 
 function App() {
   // const LOGIN_SUBMIT_BUTTON_VALUE = 'Signup';
@@ -14,11 +16,13 @@ function App() {
     return (
       <>
       <BrowserRouter>
-        <Header title="" />
+        {/* <Header title="" /> */}
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/login/:email/:password" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/mobiles" element={<Mobiles />} />
+          <Route path="/todos" element={<Todos />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
