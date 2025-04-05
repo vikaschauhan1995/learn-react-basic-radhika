@@ -12,10 +12,11 @@ const Todos = () => {
         setTodos(list);
         setIsTodosLoading(false);
     }
-    useEffect(() => {
-        getTodosList();
-    }, []);
+    // useEffect(() => {
+    //     getTodosList();
+    // }, []);
     return <div>
+        <button onClick={() => getTodosList()}>Get Todos</button>
         {isTodosLoading ? "loading..." : todos?.map((todo) => {
             return <p key={todo?.id}>{todo?.title}</p>
         })}

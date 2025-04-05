@@ -9,6 +9,9 @@ import Signup from "./pages/Signup";
 import Header from "./components/Header";
 import Mobiles from "./pages/Mobiles";
 import Todos from "./pages/Todos";
+import UserRefComponent from "./components/UserRefComponent";
+import UserMemoComponent from "./components/UserMemoComponent";
+import StateManagement from "./components/StateManagement";
 
 function App() {
   // const LOGIN_SUBMIT_BUTTON_VALUE = 'Signup';
@@ -23,6 +26,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/mobiles" element={<Mobiles />} />
           <Route path="/todos" element={<Todos />} />
+          <Route path="/useRef" element={<UserRefComponent />} />
+          {/* <Route path="/useMemo" element={<UserMemoComponent />} /> */}
+          <Route path="/stateManagement" element={<StateManagement />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

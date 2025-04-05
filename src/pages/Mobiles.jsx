@@ -6,7 +6,7 @@ const Mobiles = () => {
     const [mobileList, setMobileList] = useState([]);
     const [isMobileDataLoading, setIsMobileDataLoading] = useState(false);
     const [getMobileDataError, setGetMobileDataError] = useState(null);
-    console.log("getMobileDataError=>", getMobileDataError);
+    // console.log("getMobileDataError=>", getMobileDataError);
     const getMobileData = async () => {
         try {
             setIsMobileDataLoading(true);
