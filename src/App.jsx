@@ -10,14 +10,18 @@ import Header from "./components/Header";
 import Mobiles from "./pages/Mobiles";
 import Todos from "./pages/Todos";
 import UserRefComponent from "./components/UserRefComponent";
-import UserMemoComponent from "./components/UserMemoComponent";
+// import UserMemoComponent from "./components/UserMemoComponent";
 import StateManagement from "./components/StateManagement";
+import Redux from "./pages/Redux";
+import { Provider } from "react-redux";
+import {createStore} from "./redux/store";
 
 function App() {
   // const LOGIN_SUBMIT_BUTTON_VALUE = 'Signup';
   if (true) {
     return (
       <>
+      <Provider store={createStore}>
       <BrowserRouter>
         {/* <Header title="" /> */}
         <Routes>
@@ -29,9 +33,11 @@ function App() {
           <Route path="/useRef" element={<UserRefComponent />} />
           {/* <Route path="/useMemo" element={<UserMemoComponent />} /> */}
           <Route path="/stateManagement" element={<StateManagement />} />
+          <Route path="/redux" element={<Redux />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
+      </Provider>
       </>
     );
   }
