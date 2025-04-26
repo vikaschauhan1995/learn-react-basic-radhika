@@ -5,7 +5,6 @@ const Login = () => {
     const params = useParams();
     useEffect(() => {
         console.log("params=>>", params);
-        
     });
     return <div>
         <label>Username:</label>

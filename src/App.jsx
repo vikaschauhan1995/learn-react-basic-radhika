@@ -15,6 +15,7 @@ import StateManagement from "./components/StateManagement";
 import Redux from "./pages/Redux";
 import { Provider } from "react-redux";
 import {createStore} from "./redux/store";
+import ReduxToolkit from "./pages/ReduxToolkit";
 
 function App() {
   // const LOGIN_SUBMIT_BUTTON_VALUE = 'Signup';
@@ -34,6 +35,7 @@ function App() {
           {/* <Route path="/useMemo" element={<UserMemoComponent />} /> */}
           <Route path="/stateManagement" element={<StateManagement />} />
           <Route path="/redux" element={<Redux />} />
+          <Route path="/redux-toolkit" element={<ReduxToolkit />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
