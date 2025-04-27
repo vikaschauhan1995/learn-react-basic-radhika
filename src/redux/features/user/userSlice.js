@@ -12,12 +12,15 @@ const initialState = {
     users: [],
     loading: false,
     error: false,
+    count: 0
 }
-const userSlice = createSlice({
+export const userSlice = createSlice({
     name: 'userSlice',
     initialState,
     reducers: {
-
+        incrementCount: (state, action) => {
+            state.count = state.count + 1;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -34,5 +37,7 @@ const userSlice = createSlice({
         })
     }
 });
+
+export const { incrementCount } = userSlice.actions;
 
 export default userSlice.reducer;
